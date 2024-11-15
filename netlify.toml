@@ -1,0 +1,34 @@
+[[headers]]
+  for = "/*"
+    [headers.values]
+    Access-Control-Allow-Origin = "*"
+    Access-Control-Allow-Headers = "Content-Type, Authorization"
+    Access-Control-Allow-Methods = "GET, POST, OPTIONS"
+    Access-Control-Allow-Credentials = "true"
+    Access-Control-Max-Age = "86400"
+
+# Force HTTPS
+[[redirects]]
+  from = "http://*"
+  to = "https://:splat"
+  status = 301
+  force = true
+
+# Redirect non-www to www
+[[redirects]]
+  from = "https://prep-me.ai/*"
+  to = "https://www.prep-me.ai/:splat"
+  status = 301
+  force = true
+
+# Redirect Netlify subdomain to primary domain
+[[redirects]]
+  from = "https://*.netlify.app/*"
+  to = "https://www.prep-me.ai/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

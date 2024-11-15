@@ -1,0 +1,1 @@
+// Component removed as we're using the default ElevenLabs widget instead

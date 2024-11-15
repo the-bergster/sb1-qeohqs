@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-gray-50;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Varela Round', sans-serif;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-[#E86C1F] text-white px-6 py-2 rounded-md hover:bg-[#D65A0D] transition-colors disabled:bg-orange-300 flex items-center justify-center gap-2;
+  }
+
+  .btn-outline {
+    @apply border-2 border-[#E86C1F] text-[#E86C1F] px-6 py-2 rounded-md hover:bg-[#E86C1F] hover:text-white transition-colors;
+  }
+
+  .btn-secondary {
+    @apply bg-white border-2 border-[#E86C1F] text-[#E86C1F] px-6 py-2 rounded-md hover:bg-gray-50 transition-colors;
+  }
+
+  .card {
+    @apply bg-white rounded-xl shadow-lg p-8;
+  }
+
+  .input-primary {
+    @apply w-full px-6 py-4 text-lg rounded-lg border border-gray-200 focus:border-[#E86C1F] focus:ring-2 focus:ring-orange-100 outline-none transition-all;
+  }
+
+  .nav-link {
+    @apply flex items-center gap-2 text-gray-600 hover:text-[#E86C1F] transition-colors;
+  }
+
+  .nav-link.active {
+    @apply text-[#E86C1F];
+  }
+}
+
+.font-varela {
+  font-family: 'Varela Round', sans-serif !important;
+}
+
+/* TipTap Editor Styles */
+.ProseMirror {
+  @apply min-h-[200px] px-4 py-2;
+}
+
+.ProseMirror p {
+  @apply mb-4;
+}
+
+.ProseMirror ul {
+  @apply list-disc pl-6 mb-4;
+}
+
+.ProseMirror ol {
+  @apply list-decimal pl-6 mb-4;
+}
+
+.ProseMirror h1 {
+  @apply text-2xl font-bold mb-4;
+}
+
+.ProseMirror h2 {
+  @apply text-xl font-bold mb-3;
+}
+
+.ProseMirror h3 {
+  @apply text-lg font-bold mb-2;
+}
+
+.ProseMirror:focus {
+  @apply outline-none;
+}
+
+.ProseMirror p.is-editor-empty:first-child::before {
+  content: attr(data-placeholder);
+  @apply text-gray-400 float-left h-0 pointer-events-none;
+}
